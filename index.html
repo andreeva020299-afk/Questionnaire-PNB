@@ -855,6 +855,80 @@ function sendResultsToKsenia() {
   // не перенаправлять текущую страницу и не мешать заполнению формы.
   window.open(mailtoLink, '_blank');
 }
+<script>
+function buildResultsMap() {
+  const groups = {
+    prefrontal: { name: 'Кора лобных долей', count: 0 },
+    cingulate:  { name: 'Передняя часть поясной извилины', count: 0 },
+    limbic:     { name: 'Лимбическая система', count: 0 },
+    basal:      { name: 'Базальные ганглии', count: 0 },
+    temporal:   { name: 'Височные доли', count: 0 },
+    memory:     { name: 'Память', count: 0 }
+  };
+  const form = document.getElementById('amenForm');
+  Object.keys(groups).forEach(function(key) {
+    const checked = form.querySelectorAll('input[name^="'+ key +'"]:checked');
+    checked.forEach(function(input) {
+      const v = parseInt(input.value, 10);
+      if (!isNaN(v) && (v === 3 || v === 4)) groups[key].count++;
+    });
+  });
+  return groups;
+}
+
+function calculateResults() {
+  const groups = buildResultsMap();
+  let html = '';
+  Object.values(groups).forEach(g => {
+    html += '<h3>' + g.name + ': ' + g.count + '</h3>';
+  });
+  document.getElementById('results').innerHTML = html;
+}
+
+function buildResultsText() {
+  const groups = buildResultsMap();
+  const lines = ['Опросник «Мозг по Амену» — итоги',''];
+  Object.values(groups).forEach(g => lines.push(g.name + ': ' + g.count));
+  return lines.join('\n');
+}
+
+function copyToClipboard(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    return navigator.clipboard.writeText(text).catch(() => fallbackCopy(text));
+  } else {
+    return fallbackCopy(text);
+  }
+}
+function fallbackCopy(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.top = '-1000px';
+  document.body.appendChild(ta);
+  ta.focus();
+  ta.select();
+  try { document.execCommand('copy'); } catch(e) {}
+  document.body.removeChild(ta);
+  return Promise.resolve();
+}
+
+function sendResultsToKsenia() {
+  // На случай, если пользователь не нажимал «Рассчитать»
+  calculateResults();
+  const text = buildResultsText();
+  copyToClipboard(text).then(() => {
+    alert('Текст результатов скопирован. Откроется Telegram-чат. Вставьте текст и отправьте. Письмо тоже будет подготовлено автоматически.');
+    // Открываем чат с @Kseniya_PNB (вставку делает пользователь)
+    const tgUrl = 'https://t.me/Kseniya_PNB';
+    window.open(tgUrl, '_blank');
+    // Готовим письмо
+    const subject = encodeURIComponent('Опросник Амена — результат');
+    const body = encodeURIComponent(text);
+    const mailto = 'mailto:Andreeva020299@gmail.com?subject=' + subject + '&body=' + body;
+    setTimeout(function(){ window.location.href = mailto; }, 600);
+  });
+}
 </script>
+
 </body>
 </html>
