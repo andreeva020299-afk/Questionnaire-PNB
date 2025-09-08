@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Опросник «Мозг по Амену»</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 1.4;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  h2 {
+    margin-top: 20px;
+    color: #2c3e50;
+  }
+  .question {
+    margin-bottom: 8px;
+  }
+  .options label {
+    margin-right: 10px;
+  }
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+  .result {
+    margin-top: 30px;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+  }
+</style>
+</head>
+<body>
+<h1>Опросник «Мозг по Амену»</h1>
+<p>Оцените каждый симптом по шкале от 0 до 4: <strong>0 – никогда</strong>, <strong>1 – редко</strong>,
+<strong>2 – иногда</strong>, <strong>3 – часто</strong>, <strong>4 – очень часто</strong>. Выберите вариант
+«н/и», если симптом к вам не относится (оценивается как 0).</p>
+
+<form id="amenForm">
+  <!-- Кора лобных долей -->
+  <div class="section" id="prefrontal">
+    <h2>Кора лобных долей</h2>
+    <div class="question">
+      1. Проблема с удерживанием внимания или легкая отвлекаемость<br>
+      <span class="options">
+        <label><input type="radio" name="prefrontal1" value="0" required> 0</label>
+        <label><input type="radio" name="prefrontal1" value="1"> 1</label>
+        <label><input type="radio" name="prefrontal1" value="2"> 2</label>
+        <label><input type="radio" name="prefrontal1" value="3"> 3</label>
+        <label><input type="radio" name="prefrontal1" value="4"> 4</label>
+        <label><input type="radio" name="prefrontal1" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      2. Откладываю дела до последнего и выполняю их только когда наступает крайний срок<br>
+      <span class="options">
+        <label><input type="radio" name="prefrontal2" value="0" required> 0</label>
+        <label><input type="radio" name="prefrontal2" value="1"> 1</label>
+        <label><input type="radio" name="prefrontal2" value="2"> 2</label>
+        <label><input type="radio" name="prefrontal2" value="3"> 3</label>
+        <label><input type="radio" name="prefrontal2" value="4"> 4</label>
+        <label><input type="radio" name="prefrontal2" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      3. Не уделяю внимание деталям<br>
+      <span class="options">
+        <label><input type="radio" name="prefrontal3" value="0" required> 0</label>
+        <label><input type="radio" name="prefrontal3" value="1"> 1</label>
+        <label><input type="radio" name="prefrontal3" value="2"> 2</label>
+        <label><input type="radio" name="prefrontal3" value="3"> 3</label>
+        <label><input type="radio" name="prefrontal3" value="4"> 4</label>
+        <label><input type="radio" name="prefrontal3" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      4. С трудом откладываю порывы и желания, хочу получать желаемое сразу<br>
+      <span class="options">
+        <label><input type="radio" name="prefrontal4" value="0" required> 0</label>
+        <label><input type="radio" name="prefrontal4" value="1"> 1</label>
+        <label><input type="radio" name="prefrontal4" value="2"> 2</label>
+        <label><input type="radio" name="prefrontal4" value="3"> 3</label>
+        <label><input type="radio" name="prefrontal4" value="4"> 4</label>
+        <label><input type="radio" name="prefrontal4" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      5. Проблема выслушать других до конца<br>
+      <span class="options">
+        <label><input type="radio" name="prefrontal5" value="0" required> 0</label>
+        <label><input type="radio" name="prefrontal5" value="1"> 1</label>
+        <label><input type="radio" name="prefrontal5" value="2"> 2</label>
+        <label><input type="radio" name="prefrontal5" value="3"> 3</label>
+        <label><input type="radio" name="prefrontal5" value="4"> 4</label>
+        <label><input type="radio" name="prefrontal5" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      6. Не могу сидеть на одном месте (беспокойное поведение)<br>
+      <span class="options">
+        <label><input type="radio" name="prefrontal6" value="0" required> 0</label>
+        <label><input type="radio" name="prefrontal6" value="1"> 1</label>
+        <label><input type="radio" name="prefrontal6" value="2"> 2</label>
+        <label><input type="radio" name="prefrontal6" value="3"> 3</label>
+        <label><input type="radio" name="prefrontal6" value="4"> 4</label>
+        <label><input type="radio" name="prefrontal6" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      7. Отвечаю, не дослушав, перебиваю других<br>
+      <span class="options">
+        <label><input type="radio" name="prefrontal7" value="0" required> 0</label>
+        <label><input type="radio" name="prefrontal7" value="1"> 1</label>
+        <label><input type="radio" name="prefrontal7" value="2"> 2</label>
+        <label><input type="radio" name="prefrontal7" value="3"> 3</label>
+        <label><input type="radio" name="prefrontal7" value="4"> 4</label>
+        <label><input type="radio" name="prefrontal7" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      8. Принимаю решения импульсивно<br>
+      <span class="options">
+        <label><input type="radio" name="prefrontal8" value="0" required> 0</label>
+        <label><input type="radio" name="prefrontal8" value="1"> 1</label>
+        <label><input type="radio" name="prefrontal8" value="2"> 2</label>
+        <label><input type="radio" name="prefrontal8" value="3"> 3</label>
+        <label><input type="radio" name="prefrontal8" value="4"> 4</label>
+        <label><input type="radio" name="prefrontal8" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      9. Ищу сильных впечатлений<br>
+      <span class="options">
+        <label><input type="radio" name="prefrontal9" value="0" required> 0</label>
+        <label><input type="radio" name="prefrontal9" value="1"> 1</label>
+        <label><input type="radio" name="prefrontal9" value="2"> 2</label>
+        <label><input type="radio" name="prefrontal9" value="3"> 3</label>
+        <label><input type="radio" name="prefrontal9" value="4"> 4</label>
+        <label><input type="radio" name="prefrontal9" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      10. Чтобы сосредоточиться, мне нужен кофеин, никотин или сахар<br>
+      <span class="options">
+        <label><input type="radio" name="prefrontal10" value="0" required> 0</label>
+        <label><input type="radio" name="prefrontal10" value="1"> 1</label>
+        <label><input type="radio" name="prefrontal10" value="2"> 2</label>
+        <label><input type="radio" name="prefrontal10" value="3"> 3</label>
+        <label><input type="radio" name="prefrontal10" value="4"> 4</label>
+        <label><input type="radio" name="prefrontal10" value="0"> н/и</label>
+      </span>
+    </div>
+  </div>
+
+  <!-- Передняя часть поясной извилины -->
+  <div class="section" id="cingulate">
+    <h2>Передняя часть поясной извилины</h2>
+    <div class="question">
+      11. Застреваю на отрицательных мыслях<br>
+      <span class="options">
+        <label><input type="radio" name="cingulate11" value="0" required> 0</label>
+        <label><input type="radio" name="cingulate11" value="1"> 1</label>
+        <label><input type="radio" name="cingulate11" value="2"> 2</label>
+        <label><input type="radio" name="cingulate11" value="3"> 3</label>
+        <label><input type="radio" name="cingulate11" value="4"> 4</label>
+        <label><input type="radio" name="cingulate11" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      12. Почти постоянно беспокоюсь о чем‑нибудь<br>
+      <span class="options">
+        <label><input type="radio" name="cingulate12" value="0" required> 0</label>
+        <label><input type="radio" name="cingulate12" value="1"> 1</label>
+        <label><input type="radio" name="cingulate12" value="2"> 2</label>
+        <label><input type="radio" name="cingulate12" value="3"> 3</label>
+        <label><input type="radio" name="cingulate12" value="4"> 4</label>
+        <label><input type="radio" name="cingulate12" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      13. Есть тенденция к компульсивному (навязчивому) поведению или зависимостям от чего‑либо<br>
+      <span class="options">
+        <label><input type="radio" name="cingulate13" value="0" required> 0</label>
+        <label><input type="radio" name="cingulate13" value="1"> 1</label>
+        <label><input type="radio" name="cingulate13" value="2"> 2</label>
+        <label><input type="radio" name="cingulate13" value="3"> 3</label>
+        <label><input type="radio" name="cingulate13" value="4"> 4</label>
+        <label><input type="radio" name="cingulate13" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      14. Склонность испытывать недовольство или зависть по отношению к людям<br>
+      <span class="options">
+        <label><input type="radio" name="cingulate14" value="0" required> 0</label>
+        <label><input type="radio" name="cingulate14" value="1"> 1</label>
+        <label><input type="radio" name="cingulate14" value="2"> 2</label>
+        <label><input type="radio" name="cingulate14" value="3"> 3</label>
+        <label><input type="radio" name="cingulate14" value="4"> 4</label>
+        <label><input type="radio" name="cingulate14" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      15. Расстраиваюсь, когда что‑то происходит не по‑моему<br>
+      <span class="options">
+        <label><input type="radio" name="cingulate15" value="0" required> 0</label>
+        <label><input type="radio" name="cingulate15" value="1"> 1</label>
+        <label><input type="radio" name="cingulate15" value="2"> 2</label>
+        <label><input type="radio" name="cingulate15" value="3"> 3</label>
+        <label><input type="radio" name="cingulate15" value="4"> 4</label>
+        <label><input type="radio" name="cingulate15" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      16. Расстраиваюсь, когда вещи лежат не на своих местах<br>
+      <span class="options">
+        <label><input type="radio" name="cingulate16" value="0" required> 0</label>
+        <label><input type="radio" name="cingulate16" value="1"> 1</label>
+        <label><input type="radio" name="cingulate16" value="2"> 2</label>
+        <label><input type="radio" name="cingulate16" value="3"> 3</label>
+        <label><input type="radio" name="cingulate16" value="4"> 4</label>
+        <label><input type="radio" name="cingulate16" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      17. Склонность спорить и возражать<br>
+      <span class="options">
+        <label><input type="radio" name="cingulate17" value="0" required> 0</label>
+        <label><input type="radio" name="cingulate17" value="1"> 1</label>
+        <label><input type="radio" name="cingulate17" value="2"> 2</label>
+        <label><input type="radio" name="cingulate17" value="3"> 3</label>
+        <label><input type="radio" name="cingulate17" value="4"> 4</label>
+        <label><input type="radio" name="cingulate17" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      18. Не люблю перемены<br>
+      <span class="options">
+        <label><input type="radio" name="cingulate18" value="0" required> 0</label>
+        <label><input type="radio" name="cingulate18" value="1"> 1</label>
+        <label><input type="radio" name="cingulate18" value="2"> 2</label>
+        <label><input type="radio" name="cingulate18" value="3"> 3</label>
+        <label><input type="radio" name="cingulate18" value="4"> 4</label>
+        <label><input type="radio" name="cingulate18" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      19. Мне необходимо, чтобы дела были сделаны так, как я считаю нужным, иначе я расстраиваюсь<br>
+      <span class="options">
+        <label><input type="radio" name="cingulate19" value="0" required> 0</label>
+        <label><input type="radio" name="cingulate19" value="1"> 1</label>
+        <label><input type="radio" name="cingulate19" value="2"> 2</label>
+        <label><input type="radio" name="cingulate19" value="3"> 3</label>
+        <label><input type="radio" name="cingulate19" value="4"> 4</label>
+        <label><input type="radio" name="cingulate19" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      20. Мне трудно видеть разные варианты выбора в ситуациях<br>
+      <span class="options">
+        <label><input type="radio" name="cingulate20" value="0" required> 0</label>
+        <label><input type="radio" name="cingulate20" value="1"> 1</label>
+        <label><input type="radio" name="cingulate20" value="2"> 2</label>
+        <label><input type="radio" name="cingulate20" value="3"> 3</label>
+        <label><input type="radio" name="cingulate20" value="4"> 4</label>
+        <label><input type="radio" name="cingulate20" value="0"> н/и</label>
+      </span>
+    </div>
+  </div>
+
+  <!-- Лимбическая система -->
+  <div class="section" id="limbic">
+    <h2>Лимбическая система</h2>
+    <div class="question">
+      21. Испытываю грусть<br>
+      <span class="options">
+        <label><input type="radio" name="limbic21" value="0" required> 0</label>
+        <label><input type="radio" name="limbic21" value="1"> 1</label>
+        <label><input type="radio" name="limbic21" value="2"> 2</label>
+        <label><input type="radio" name="limbic21" value="3"> 3</label>
+        <label><input type="radio" name="limbic21" value="4"> 4</label>
+        <label><input type="radio" name="limbic21" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      22. Испытываю негативные чувства<br>
+      <span class="options">
+        <label><input type="radio" name="limbic22" value="0" required> 0</label>
+        <label><input type="radio" name="limbic22" value="1"> 1</label>
+        <label><input type="radio" name="limbic22" value="2"> 2</label>
+        <label><input type="radio" name="limbic22" value="3"> 3</label>
+        <label><input type="radio" name="limbic22" value="4"> 4</label>
+        <label><input type="radio" name="limbic22" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      23. Неудовлетворенность собой
+      <br><span class="options">
+        <label><input type="radio" name="limbic23" value="0" required> 0</label>
+        <label><input type="radio" name="limbic23" value="1"> 1</label>
+        <label><input type="radio" name="limbic23" value="2"> 2</label>
+        <label><input type="radio" name="limbic23" value="3"> 3</label>
+        <label><input type="radio" name="limbic23" value="4"> 4</label>
+        <label><input type="radio" name="limbic23" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      24. Мне скучно<br>
+      <span class="options">
+        <label><input type="radio" name="limbic24" value="0" required> 0</label>
+        <label><input type="radio" name="limbic24" value="1"> 1</label>
+        <label><input type="radio" name="limbic24" value="2"> 2</label>
+        <label><input type="radio" name="limbic24" value="3"> 3</label>
+        <label><input type="radio" name="limbic24" value="4"> 4</label>
+        <label><input type="radio" name="limbic24" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      25. Низкая энергия
+      <br><span class="options">
+        <label><input type="radio" name="limbic25" value="0" required> 0</label>
+        <label><input type="radio" name="limbic25" value="1"> 1</label>
+        <label><input type="radio" name="limbic25" value="2"> 2</label>
+        <label><input type="radio" name="limbic25" value="3"> 3</label>
+        <label><input type="radio" name="limbic25" value="4"> 4</label>
+        <label><input type="radio" name="limbic25" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      26. Сниженный интерес к тому, что обычно радует и занимает<br>
+      <span class="options">
+        <label><input type="radio" name="limbic26" value="0" required> 0</label>
+        <label><input type="radio" name="limbic26" value="1"> 1</label>
+        <label><input type="radio" name="limbic26" value="2"> 2</label>
+        <label><input type="radio" name="limbic26" value="3"> 3</label>
+        <label><input type="radio" name="limbic26" value="4"> 4</label>
+        <label><input type="radio" name="limbic26" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      27. Бывает чувство безнадежности, беспомощности, бесполезности или вины<br>
+      <span class="options">
+        <label><input type="radio" name="limbic27" value="0" required> 0</label>
+        <label><input type="radio" name="limbic27" value="1"> 1</label>
+        <label><input type="radio" name="limbic27" value="2"> 2</label>
+        <label><input type="radio" name="limbic27" value="3"> 3</label>
+        <label><input type="radio" name="limbic27" value="4"> 4</label>
+        <label><input type="radio" name="limbic27" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      28. Плачу
+      <br><span class="options">
+        <label><input type="radio" name="limbic28" value="0" required> 0</label>
+        <label><input type="radio" name="limbic28" value="1"> 1</label>
+        <label><input type="radio" name="limbic28" value="2"> 2</label>
+        <label><input type="radio" name="limbic28" value="3"> 3</label>
+        <label><input type="radio" name="limbic28" value="4"> 4</label>
+        <label><input type="radio" name="limbic28" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      29. Низкая самооценка<br>
+      <span class="options">
+        <label><input type="radio" name="limbic29" value="0" required> 0</label>
+        <label><input type="radio" name="limbic29" value="1"> 1</label>
+        <label><input type="radio" name="limbic29" value="2"> 2</label>
+        <label><input type="radio" name="limbic29" value="3"> 3</label>
+        <label><input type="radio" name="limbic29" value="4"> 4</label>
+        <label><input type="radio" name="limbic29" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      30. Социальная изоляция
+      <br><span class="options">
+        <label><input type="radio" name="limbic30" value="0" required> 0</label>
+        <label><input type="radio" name="limbic30" value="1"> 1</label>
+        <label><input type="radio" name="limbic30" value="2"> 2</label>
+        <label><input type="radio" name="limbic30" value="3"> 3</label>
+        <label><input type="radio" name="limbic30" value="4"> 4</label>
+        <label><input type="radio" name="limbic30" value="0"> н/и</label>
+      </span>
+    </div>
+  </div>
+
+  <!-- Базальные ганглии -->
+  <div class="section" id="basal">
+    <h2>Базальные ганглии</h2>
+    <div class="question">
+      31. Состояние нервозности и беспокойства<br>
+      <span class="options">
+        <label><input type="radio" name="basal31" value="0" required> 0</label>
+        <label><input type="radio" name="basal31" value="1"> 1</label>
+        <label><input type="radio" name="basal31" value="2"> 2</label>
+        <label><input type="radio" name="basal31" value="3"> 3</label>
+        <label><input type="radio" name="basal31" value="4"> 4</label>
+        <label><input type="radio" name="basal31" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      32. Чувство паники<br>
+      <span class="options">
+        <label><input type="radio" name="basal32" value="0" required> 0</label>
+        <label><input type="radio" name="basal32" value="1"> 1</label>
+        <label><input type="radio" name="basal32" value="2"> 2</label>
+        <label><input type="radio" name="basal32" value="3"> 3</label>
+        <label><input type="radio" name="basal32" value="4"> 4</label>
+        <label><input type="radio" name="basal32" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      33. Симптомы ригидности мышц, такие как головные боли или воспаленные мышцы<br>
+      <span class="options">
+        <label><input type="radio" name="basal33" value="0" required> 0</label>
+        <label><input type="radio" name="basal33" value="1"> 1</label>
+        <label><input type="radio" name="basal33" value="2"> 2</label>
+        <label><input type="radio" name="basal33" value="3"> 3</label>
+        <label><input type="radio" name="basal33" value="4"> 4</label>
+        <label><input type="radio" name="basal33" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      34. Тенденция предсказывать худшее
+      <br><span class="options">
+        <label><input type="radio" name="basal34" value="0" required> 0</label>
+        <label><input type="radio" name="basal34" value="1"> 1</label>
+        <label><input type="radio" name="basal34" value="2"> 2</label>
+        <label><input type="radio" name="basal34" value="3"> 3</label>
+        <label><input type="radio" name="basal34" value="4"> 4</label>
+        <label><input type="radio" name="basal34" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      35. Избегаю конфликтов<br>
+      <span class="options">
+        <label><input type="radio" name="basal35" value="0" required> 0</label>
+        <label><input type="radio" name="basal35" value="1"> 1</label>
+        <label><input type="radio" name="basal35" value="2"> 2</label>
+        <label><input type="radio" name="basal35" value="3"> 3</label>
+        <label><input type="radio" name="basal35" value="4"> 4</label>
+        <label><input type="radio" name="basal35" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      36. Чрезмерный страх быть оцененным и осужденным другими<br>
+      <span class="options">
+        <label><input type="radio" name="basal36" value="0" required> 0</label>
+        <label><input type="radio" name="basal36" value="1"> 1</label>
+        <label><input type="radio" name="basal36" value="2"> 2</label>
+        <label><input type="radio" name="basal36" value="3"> 3</label>
+        <label><input type="radio" name="basal36" value="4"> 4</label>
+        <label><input type="radio" name="basal36" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      37. Избыточная мотивация, трудно оторваться от работы<br>
+      <span class="options">
+        <label><input type="radio" name="basal37" value="0" required> 0</label>
+        <label><input type="radio" name="basal37" value="1"> 1</label>
+        <label><input type="radio" name="basal37" value="2"> 2</label>
+        <label><input type="radio" name="basal37" value="3"> 3</label>
+        <label><input type="radio" name="basal37" value="4"> 4</label>
+        <label><input type="radio" name="basal37" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      38. Не очень уверен(а) в своих способностях<br>
+      <span class="options">
+        <label><input type="radio" name="basal38" value="0" required> 0</label>
+        <label><input type="radio" name="basal38" value="1"> 1</label>
+        <label><input type="radio" name="basal38" value="2"> 2</label>
+        <label><input type="radio" name="basal38" value="3"> 3</label>
+        <label><input type="radio" name="basal38" value="4"> 4</label>
+        <label><input type="radio" name="basal38" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      39. Ожидаю плохого<br>
+      <span class="options">
+        <label><input type="radio" name="basal39" value="0" required> 0</label>
+        <label><input type="radio" name="basal39" value="1"> 1</label>
+        <label><input type="radio" name="basal39" value="2"> 2</label>
+        <label><input type="radio" name="basal39" value="3"> 3</label>
+        <label><input type="radio" name="basal39" value="4"> 4</label>
+        <label><input type="radio" name="basal39" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      40. Легко пугаюсь
+      <br><span class="options">
+        <label><input type="radio" name="basal40" value="0" required> 0</label>
+        <label><input type="radio" name="basal40" value="1"> 1</label>
+        <label><input type="radio" name="basal40" value="2"> 2</label>
+        <label><input type="radio" name="basal40" value="3"> 3</label>
+        <label><input type="radio" name="basal40" value="4"> 4</label>
+        <label><input type="radio" name="basal40" value="0"> н/и</label>
+      </span>
+    </div>
+  </div>
+
+  <!-- Височные доли -->
+  <div class="section" id="temporal">
+    <h2>Височные доли</h2>
+    <div class="question">
+      41. Проблемы с выдержкой (взрывной характер)<br>
+      <span class="options">
+        <label><input type="radio" name="temporal41" value="0" required> 0</label>
+        <label><input type="radio" name="temporal41" value="1"> 1</label>
+        <label><input type="radio" name="temporal41" value="2"> 2</label>
+        <label><input type="radio" name="temporal41" value="3"> 3</label>
+        <label><input type="radio" name="temporal41" value="4"> 4</label>
+        <label><input type="radio" name="temporal41" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      42. Легко выхожу из себя<br>
+      <span class="options">
+        <label><input type="radio" name="temporal42" value="0" required> 0</label>
+        <label><input type="radio" name="temporal42" value="1"> 1</label>
+        <label><input type="radio" name="temporal42" value="2"> 2</label>
+        <label><input type="radio" name="temporal42" value="3"> 3</label>
+        <label><input type="radio" name="temporal42" value="4"> 4</label>
+        <label><input type="radio" name="temporal42" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      43. Раздражение накапливается, потом я взрываюсь, затем остываю, после вспышки чувствую усталость<br>
+      <span class="options">
+        <label><input type="radio" name="temporal43" value="0" required> 0</label>
+        <label><input type="radio" name="temporal43" value="1"> 1</label>
+        <label><input type="radio" name="temporal43" value="2"> 2</label>
+        <label><input type="radio" name="temporal43" value="3"> 3</label>
+        <label><input type="radio" name="temporal43" value="4"> 4</label>
+        <label><input type="radio" name="temporal43" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      44. Непостоянное или непредсказуемое настроение<br>
+      <span class="options">
+        <label><input type="radio" name="temporal44" value="0" required> 0</label>
+        <label><input type="radio" name="temporal44" value="1"> 1</label>
+        <label><input type="radio" name="temporal44" value="2"> 2</label>
+        <label><input type="radio" name="temporal44" value="3"> 3</label>
+        <label><input type="radio" name="temporal44" value="4"> 4</label>
+        <label><input type="radio" name="temporal44" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      45. Считаю, что замечания других обо мне были негативными, хотя на самом деле это не так<br>
+      <span class="options">
+        <label><input type="radio" name="temporal45" value="0" required> 0</label>
+        <label><input type="radio" name="temporal45" value="1"> 1</label>
+        <label><input type="radio" name="temporal45" value="2"> 2</label>
+        <label><input type="radio" name="temporal45" value="3"> 3</label>
+        <label><input type="radio" name="temporal45" value="4"> 4</label>
+        <label><input type="radio" name="temporal45" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      46. Переживаю состояние «дежавю» (чувство, что нечто подобное уже когда‑то происходило)<br>
+      <span class="options">
+        <label><input type="radio" name="temporal46" value="0" required> 0</label>
+        <label><input type="radio" name="temporal46" value="1"> 1</label>
+        <label><input type="radio" name="temporal46" value="2"> 2</label>
+        <label><input type="radio" name="temporal46" value="3"> 3</label>
+        <label><input type="radio" name="temporal46" value="4"> 4</label>
+        <label><input type="radio" name="temporal46" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      47. Думаю, что другие ждут случая, чтобы навредить мне<br>
+      <span class="options">
+        <label><input type="radio" name="temporal47" value="0" required> 0</label>
+        <label><input type="radio" name="temporal47" value="1"> 1</label>
+        <label><input type="radio" name="temporal47" value="2"> 2</label>
+        <label><input type="radio" name="temporal47" value="3"> 3</label>
+        <label><input type="radio" name="temporal47" value="4"> 4</label>
+        <label><input type="radio" name="temporal47" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      48. Бывают темные или жестокие мысли, которые возникают внезапно<br>
+      <span class="options">
+        <label><input type="radio" name="temporal48" value="0" required> 0</label>
+        <label><input type="radio" name="temporal48" value="1"> 1</label>
+        <label><input type="radio" name="temporal48" value="2"> 2</label>
+        <label><input type="radio" name="temporal48" value="3"> 3</label>
+        <label><input type="radio" name="temporal48" value="4"> 4</label>
+        <label><input type="radio" name="temporal48" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      49. Трудно вспомнить подходящее слово<br>
+      <span class="options">
+        <label><input type="radio" name="temporal49" value="0" required> 0</label>
+        <label><input type="radio" name="temporal49" value="1"> 1</label>
+        <label><input type="radio" name="temporal49" value="2"> 2</label>
+        <label><input type="radio" name="temporal49" value="3"> 3</label>
+        <label><input type="radio" name="temporal49" value="4"> 4</label>
+        <label><input type="radio" name="temporal49" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      50. Головные боли или боли в животе неизвестного происхождения<br>
+      <span class="options">
+        <label><input type="radio" name="temporal50" value="0" required> 0</label>
+        <label><input type="radio" name="temporal50" value="1"> 1</label>
+        <label><input type="radio" name="temporal50" value="2"> 2</label>
+        <label><input type="radio" name="temporal50" value="3"> 3</label>
+        <label><input type="radio" name="temporal50" value="4"> 4</label>
+        <label><input type="radio" name="temporal50" value="0"> н/и</label>
+      </span>
+    </div>
+  </div>
+
+  <!-- Память -->
+  <div class="section" id="memory">
+    <h2>Память</h2>
+    <div class="question">
+      51. Забывчивость<br>
+      <span class="options">
+        <label><input type="radio" name="memory51" value="0" required> 0</label>
+        <label><input type="radio" name="memory51" value="1"> 1</label>
+        <label><input type="radio" name="memory51" value="2"> 2</label>
+        <label><input type="radio" name="memory51" value="3"> 3</label>
+        <label><input type="radio" name="memory51" value="4"> 4</label>
+        <label><input type="radio" name="memory51" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      52. Проблемы с памятью, которые признаю<br>
+      <span class="options">
+        <label><input type="radio" name="memory52" value="0" required> 0</label>
+        <label><input type="radio" name="memory52" value="1"> 1</label>
+        <label><input type="radio" name="memory52" value="2"> 2</label>
+        <label><input type="radio" name="memory52" value="3"> 3</label>
+        <label><input type="radio" name="memory52" value="4"> 4</label>
+        <label><input type="radio" name="memory52" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      53. Забываю о назначенных встречах<br>
+      <span class="options">
+        <label><input type="radio" name="memory53" value="0" required> 0</label>
+        <label><input type="radio" name="memory53" value="1"> 1</label>
+        <label><input type="radio" name="memory53" value="2"> 2</label>
+        <label><input type="radio" name="memory53" value="3"> 3</label>
+        <label><input type="radio" name="memory53" value="4"> 4</label>
+        <label><input type="radio" name="memory53" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      54. Забываю вовремя принимать лекарства или добавки<br>
+      <span class="options">
+        <label><input type="radio" name="memory54" value="0" required> 0</label>
+        <label><input type="radio" name="memory54" value="1"> 1</label>
+        <label><input type="radio" name="memory54" value="2"> 2</label>
+        <label><input type="radio" name="memory54" value="3"> 3</label>
+        <label><input type="radio" name="memory54" value="4"> 4</label>
+        <label><input type="radio" name="memory54" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      55. Проблема с тем, чтобы вспомнить недавние события<br>
+      <span class="options">
+        <label><input type="radio" name="memory55" value="0" required> 0</label>
+        <label><input type="radio" name="memory55" value="1"> 1</label>
+        <label><input type="radio" name="memory55" value="2"> 2</label>
+        <label><input type="radio" name="memory55" value="3"> 3</label>
+        <label><input type="radio" name="memory55" value="4"> 4</label>
+        <label><input type="radio" name="memory55" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      56. С трудом вспоминаю имена людей<br>
+      <span class="options">
+        <label><input type="radio" name="memory56" value="0" required> 0</label>
+        <label><input type="radio" name="memory56" value="1"> 1</label>
+        <label><input type="radio" name="memory56" value="2"> 2</label>
+        <label><input type="radio" name="memory56" value="3"> 3</label>
+        <label><input type="radio" name="memory56" value="4"> 4</label>
+        <label><input type="radio" name="memory56" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      57. Мне трудно запоминать вещи, необходимые для учебы, работы или хобби<br>
+      <span class="options">
+        <label><input type="radio" name="memory57" value="0" required> 0</label>
+        <label><input type="radio" name="memory57" value="1"> 1</label>
+        <label><input type="radio" name="memory57" value="2"> 2</label>
+        <label><input type="radio" name="memory57" value="3"> 3</label>
+        <label><input type="radio" name="memory57" value="4"> 4</label>
+        <label><input type="radio" name="memory57" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      58. Я забываю что‑то важное на следующий день<br>
+      <span class="options">
+        <label><input type="radio" name="memory58" value="0" required> 0</label>
+        <label><input type="radio" name="memory58" value="1"> 1</label>
+        <label><input type="radio" name="memory58" value="2"> 2</label>
+        <label><input type="radio" name="memory58" value="3"> 3</label>
+        <label><input type="radio" name="memory58" value="4"> 4</label>
+        <label><input type="radio" name="memory58" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      59. Я забываю то, что я собирался (-лась) сказать прямо в середине фразы<br>
+      <span class="options">
+        <label><input type="radio" name="memory59" value="0" required> 0</label>
+        <label><input type="radio" name="memory59" value="1"> 1</label>
+        <label><input type="radio" name="memory59" value="2"> 2</label>
+        <label><input type="radio" name="memory59" value="3"> 3</label>
+        <label><input type="radio" name="memory59" value="4"> 4</label>
+        <label><input type="radio" name="memory59" value="0"> н/и</label>
+      </span>
+    </div>
+    <div class="question">
+      60. Мне трудно следовать инструкциям, состоящим из нескольких этапов<br>
+      <span class="options">
+        <label><input type="radio" name="memory60" value="0" required> 0</label>
+        <label><input type="radio" name="memory60" value="1"> 1</label>
+        <label><input type="radio" name="memory60" value="2"> 2</label>
+        <label><input type="radio" name="memory60" value="3"> 3</label>
+        <label><input type="radio" name="memory60" value="4"> 4</label>
+        <label><input type="radio" name="memory60" value="0"> н/и</label>
+      </span>
+    </div>
+  </div>
+
+  <button type="button" onclick="calculateResults()">Рассчитать результаты</button>
+  <!-- Кнопка для отправки результатов Ксении. При нажатии сначала
+       показываются результаты на странице, затем открываются два
+       дополнительных окна: одно с почтовым клиентом для отправки
+       письма на указанный адрес, и второе с сообщением в Telegram
+       пользователю @Kseniya_PNB. -->
+  <button type="button" onclick="sendResultsToKsenia()">Отправить результаты Ксении</button>
+</form>
+
+<div id="results" class="result"></div>
+
+<script>
+function calculateResults() {
+  // Определяем группы и начальные счётчики
+  let groups = {
+    prefrontal: { name: 'Кора лобных долей', count: 0 },
+    cingulate: { name: 'Передняя часть поясной извилины', count: 0 },
+    limbic: { name: 'Лимбическая система', count: 0 },
+    basal: { name: 'Базальные ганглии', count: 0 },
+    temporal: { name: 'Височные доли', count: 0 },
+    memory: { name: 'Память', count: 0 }
+  };
+  const form = document.getElementById('amenForm');
+  // Для каждой группы выбираем отмеченные ответы и считаем, сколько из них равно 3 или 4
+  Object.keys(groups).forEach(function(groupKey) {
+    const checked = form.querySelectorAll('input[name^="' + groupKey + '"]:checked');
+    checked.forEach(function(input) {
+      const val = parseInt(input.value);
+      if (!isNaN(val) && (val === 3 || val === 4)) {
+        groups[groupKey].count++;
+      }
+    });
+  });
+  // Формируем вывод
+  let output = '';
+  Object.values(groups).forEach(function(g) {
+    const c = g.count;
+    let interpretation = '';
+    if (c === 0) {
+      interpretation = 'Нарушения отсутствуют. Нормальная активность мозга.';
+    } else if (c === 1) {
+      interpretation = 'Невысокий уровень нарушений. Достаточно корректировки питания.';
+    } else if (c >= 2 && c <= 4) {
+      interpretation = 'Средняя степень отклонений. Рекомендованы аминокислотная терапия, функциональная диетология и специальные психофизиологические мероприятия.';
+    } else if (c >= 5) {
+      interpretation = 'Высокая степень отклонений. Требуются аминокислотная терапия, функциональная диетология и консультация специалиста.';
+    }
+    output += '<h3>' + g.name + ': ' + c + ' «часто/очень часто»</h3><p>' + interpretation + '</p>';
+  });
+  document.getElementById('results').innerHTML = output;
+}
+
+// Сбор результатов в текстовом формате для отправки по почте или в Telegram
+// Функция повторяет логику подсчёта из calculateResults, но возвращает
+// готовый строковый отчёт. В отчёте используется простой текст,
+// разделённый переводами строк, чтобы корректно вставлять его в письма
+// и сообщения. При необходимости эту функцию можно расширить для
+// изменения формата отчёта.
+function gatherResultsData() {
+  // Определяем группы и начальные счётчики
+  let groups = {
+    prefrontal: { name: 'Кора лобных долей', count: 0 },
+    cingulate: { name: 'Передняя часть поясной извилины', count: 0 },
+    limbic: { name: 'Лимбическая система', count: 0 },
+    basal: { name: 'Базальные ганглии', count: 0 },
+    temporal: { name: 'Височные доли', count: 0 },
+    memory: { name: 'Память', count: 0 }
+  };
+  const form = document.getElementById('amenForm');
+  // Для каждой группы выбираем отмеченные ответы и считаем, сколько из них равно 3 или 4
+  Object.keys(groups).forEach(function(groupKey) {
+    const checked = form.querySelectorAll('input[name^="' + groupKey + '"]:checked');
+    checked.forEach(function(input) {
+      const val = parseInt(input.value);
+      if (!isNaN(val) && (val === 3 || val === 4)) {
+        groups[groupKey].count++;
+      }
+    });
+  });
+  // Формируем текстовый отчёт
+  let parts = [];
+  Object.values(groups).forEach(function(g) {
+    const c = g.count;
+    let interpretation = '';
+    if (c === 0) {
+      interpretation = 'Нарушения отсутствуют. Нормальная активность мозга.';
+    } else if (c === 1) {
+      interpretation = 'Невысокий уровень нарушений. Достаточно корректировки питания.';
+    } else if (c >= 2 && c <= 4) {
+      interpretation = 'Средняя степень отклонений. Рекомендованы аминокислотная терапия, функциональная диетология и специальные психофизиологические мероприятия.';
+    } else if (c >= 5) {
+      interpretation = 'Высокая степень отклонений. Требуются аминокислотная терапия, функциональная диетология и консультация специалиста.';
+    }
+    parts.push(g.name + ': ' + c + ' «часто/очень часто». ' + interpretation);
+  });
+  return parts.join('\n\n');
+}
+
+// Отправка результатов на email и в Telegram
+// Функция формирует текст отчёта, затем открывает окно почтового клиента
+// с уже заполненными темой и телом письма, а также открывает ссылку на
+// отправку сообщения в Telegram указанному пользователю. При нажатии
+// пользователь сможет дополнить письмо/сообщение и подтвердить отправку.
+function sendResultsToKsenia() {
+  // Сначала обновляем результаты на странице, чтобы клиент видел их на экране
+  calculateResults();
+  const message = gatherResultsData();
+  const email = 'Andreeva020299@gmail.com';
+  const subject = 'Результаты опроса «Мозг по Амену»';
+  // Формируем ссылку для почтового клиента. Используем encodeURIComponent,
+  // чтобы корректно передать русские символы и переводы строк
+  const mailtoLink = 'mailto:' + encodeURIComponent(email) + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(message);
+  // Формируем ссылку для Telegram. Используем username без символа @ и
+  // передаём текст сообщения в параметре text. Такой формат поддерживается
+  // Telegram и откроет диалог с указанным пользователем с заполненным текстом.
+  const telegramUsername = 'Kseniya_PNB';
+  const telegramLink = 'https://t.me/' + telegramUsername + '?text=' + encodeURIComponent(message);
+  // Открываем окно для отправки сообщения в Telegram
+  window.open(telegramLink, '_blank');
+  // Открываем почтовый клиент в новом окне. Используем window.open, чтобы
+  // не перенаправлять текущую страницу и не мешать заполнению формы.
+  window.open(mailtoLink, '_blank');
+}
+</script>
+</body>
+</html>
